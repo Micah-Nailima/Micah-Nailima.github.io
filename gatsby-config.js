@@ -1,33 +1,29 @@
 module.exports = {
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
+    title: `Micah's World`,
+    name: `Narritive (Template) / 2020 Micah's World`,
+    siteUrl: `https://micah-sng.github.io/`,
+    description: `A place for me to document all my projects`,
     hero: {
-      heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
+      heading: `A home for my projects`,
       maxWidth: 652,
     },
     social: [
       {
-        name: `twitter`,
-        url: `https://twitter.com/narative`,
+        name: `twitch`,
+        url: `https://twitch.tv/azn_boyo`,
       },
       {
         name: `github`,
-        url: `https://github.com/narative`,
+        url: `https://github.com/micah-sng`,
       },
       {
-        name: `instagram`,
-        url: `https://instagram.com/narative.co`,
+        name: `youtube`,
+        url: `https://www.youtube.com/user/spider6516`,
       },
       {
-        name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`,
-      },
-      {
-        name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
+        name: `twitter`,
+        url: `https://twitter.com/AZN_Boyo`,
       },
     ],
   },

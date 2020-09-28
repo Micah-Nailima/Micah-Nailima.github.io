@@ -1,0 +1,10 @@
+name: Micah
+bio: |
+  Just a guy who likes playing games, building things, and learning how things work.
+avatar: ./avatars/micah.png
+social:
+  - url: https://github.com/micah-sng
+  - url: https://twitch.tv/azn_boyo
+  - url: https://www.youtube.com/user/spider6516
+  - url: https://twitter.com/AZN_Boyo
+featured: true

@@ -104,4 +104,8 @@ Theoretically this should all work, as in others have tested either hand wired o
 # Conclusion
 (not finished with project yet, will update in a few weeks when v0.3 boards arrive)
 
+# Resources
+[Github Repo]()
+[OSHPark Board Link]()
+[BOM]()
 

@@ -1,13 +1,13 @@
 ---
 title: "Wii Bluetooth to USB"
 author: Micah
-date: 2020-10-05
+date: 2020-10-06
 hero: ./images/header.png
 excerpt: A bluetooth module for maximum compatibility with the Dolphin emulator
 ---
 
 ## The Concept
-The Dolphin emulator, which is an emulator for the Nintendo Wii, has the ability to use physical Wiimotes through the use of ['Bluetooth Passthrough'.](https://dolphin-emu.org/blog/2016/10/24/bluetooth-passthrough/) The idea is that instead of emulating the Wiimote or dealing with the OS and it's Bluetooth stack and whatever it decides to do to the Wiimote, you bypass most of the controller emulation by simply not emulating the Wii Bluetooth adapter. I won't go into it too much, but basically you can use any bluetooth adapter, but the ones that have the greatest compatibility are the ones that come directly from the Wii, as in if you open your Wii, you can take it out and connect it to your computer (with some janky wiring). This works because the adapter itself is connected through USB within the Wii and which means it can be connected to a computer. 
+The Dolphin emulator, which is an emulator for the Nintendo Wii, has the ability to use physical Wiimotes through the use of ['Bluetooth](https://dolphin-emu.org/blog/2016/10/24/bluetooth-passthrough/) [Passthrough'.](https://wiki.dolphin-emu.org/index.php?title=Bluetooth_Passthrough) The idea is that instead of emulating the Wiimote or dealing with the OS and it's Bluetooth stack and whatever it decides to do to the Wiimote, you bypass most of the controller emulation by simply not emulating the Wii Bluetooth adapter. I won't go into it too much, but basically you can use any bluetooth adapter, but the ones that have the greatest compatibility are the ones that come directly from the Wii, as in if you open your Wii, you can take it out and connect it to your computer (with some janky wiring). This works because the adapter itself is connected through USB within the Wii and which means it can be connected to a computer. 
 
 ## Adapter Documentation
 The adapter itself has been well documented and reverse engineered by both those on the [Dolphin Forum](https://forums.dolphin-emu.org/Thread-how-to-wire-a-wii-s-bluetooth-module-to-a-pc-usb-port) and those on the [BitBuilt Fourm](https://bitbuilt.net/forums/index.php?threads/the-definitive-wii-trimming-guide.198/). The BitBuilt members ShockSlayer and Cheese were the ones who figured out that shorting all three 3.3v pads turns the module on aswell as figuring out that the sync pad had to be connected to 3.3v to turn on the Wii side sync function.

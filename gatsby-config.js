@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Micah's World`,
-    name: `Narritive (Template) / 2020 Micah's World`,
+    name: `Micah Boyo`,
     siteUrl: `https://micah-sng.github.io/`,
     description: `A place for me to document all my projects`,
     hero: {
@@ -11,7 +11,7 @@ module.exports = {
     social: [
       {
         name: `twitch`,
-        url: `https://twitch.tv/azn_boyo`,
+        url: `https://twitch.tv/micah_boyo`,
       },
       {
         name: `github`,

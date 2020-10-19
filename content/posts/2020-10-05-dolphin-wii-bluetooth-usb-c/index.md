@@ -1,6 +1,6 @@
 ---
 title: "Wii Bluetooth to USB"
-author: Micah
+author: Nailima
 date: 2020-10-06
 hero: ./images/header.png
 excerpt: A bluetooth module for maximum compatibility with the Dolphin emulator

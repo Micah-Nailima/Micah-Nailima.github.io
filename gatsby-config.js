@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Micah's World`,
-    name: `Micah Boyo`,
-    siteUrl: `https://micah-sng.github.io/`,
+    title: `Nailima's World`,
+    name: `Nailima`,
+    siteUrl: `https://YoItzNailima.github.io/`,
     description: `A place for me to document all my projects`,
     hero: {
       heading: `A home for my projects`,
@@ -11,11 +11,11 @@ module.exports = {
     social: [
       {
         name: `twitch`,
-        url: `https://twitch.tv/micah_boyo`,
+        url: `https://twitch.tv/YoItzNailima`,
       },
       {
         name: `github`,
-        url: `https://github.com/micah-sng`,
+        url: `https://github.com/YoItzNailima`,
       },
       {
         name: `youtube`,
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         name: `twitter`,
-        url: `https://twitter.com/AZN_Boyo`,
+        url: `https://twitter.com/YoItzNailima`,
       },
     ],
   },

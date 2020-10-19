@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Nailima's World`,
     name: `Nailima`,
-    siteUrl: `https://YoItzNailima.github.io/`,
+    siteUrl: `https://ItzNailima.github.io/`,
     description: `A place for me to document all my projects`,
     hero: {
       heading: `A home for my projects`,
@@ -11,11 +11,11 @@ module.exports = {
     social: [
       {
         name: `twitch`,
-        url: `https://twitch.tv/YoItzNailima`,
+        url: `https://twitch.tv/ItzNailima`,
       },
       {
         name: `github`,
-        url: `https://github.com/YoItzNailima`,
+        url: `https://github.com/ItzNailima`,
       },
       {
         name: `youtube`,
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         name: `twitter`,
-        url: `https://twitter.com/YoItzNailima`,
+        url: `https://twitter.com/ItzNailima`,
       },
     ],
   },

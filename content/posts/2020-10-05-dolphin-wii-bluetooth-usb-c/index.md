@@ -88,12 +88,12 @@ v0.2 to v0.3's changes stem from the fact that I cannot have any other component
 
 <div className="Image__Small">
   <img
-    src="./images/board-top.png"
+    src="./images/v03.jpg"
     title="PCB v0.3 Front"
     alt="PCB v0.3"
   />
    <img
-    src="./images/board-bottom.png"
+    src="./images/v03 back.jpg"
     title="PCB v0.3 Back"
     alt="PCB v0.3"
   />
@@ -101,11 +101,16 @@ v0.2 to v0.3's changes stem from the fact that I cannot have any other component
 
 Theoretically this should all work, as in others have tested either hand wired or pcb's with similar if not the same schematics.
 
+#### v0.4 (WIP)
+So v0.3 didn't work as planned, I am gonna be upgrading the parts in this to add a few bits of protection. A fuse and a USB-ESD protection circuit will be added to hopefully make sure I don't break it in a stupid way and instead break it in a less stupid way. Also the voltage regulator got very hot when the Bluetooth module was theoretically attached in the right orientation. Will revisit the pinout of the Molex connector to make sure it's correct.
+
 # Conclusion
-(not finished with project yet, will update in a few weeks when v0.3 boards arrive)
+(not finished with project yet, will update in a few weeks when v0.4 boards are designed and tested)
 
 # Resources
-[Github Repo]()
+[Github Repo](https://github.com/ItzNailima/Wii-BL-to-USB)
+
 [OSHPark Board Link]()
+
 [BOM]()
 

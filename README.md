@@ -23,7 +23,7 @@ Captured from this repository's demo content. The same home page appears in ligh
 
 ## Get started
 
-Use **Node.js 22.12.0 or newer** and **pnpm 12.8.1**. The repository's `.nvmrc` selects Node 22, and `packageManager` pins pnpm.
+Use **Node.js 26.0.0 or newer** and **pnpm 12.8.1**. The repository's `.nvmrc` selects Node 26, and `packageManager` pins pnpm.
 
 ```sh
 git clone https://github.com/huamurui/pudding.git
@@ -223,7 +223,7 @@ Keep generated string values for `strict`, `reactionsEnabled`, and `emitMetadata
 3. In **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source.
 4. Push to `main`, or run the included workflow manually from `main`.
 
-The workflow in `.github/workflows/` runs lint, type checks, tests, and a production build on pull requests and pushes to `main`. Deployment runs only on `main` outside pull requests. Quality checks read pnpm from `packageManager` and Node from `.nvmrc`; the Astro build uses Node 22. For another default branch, update both the triggers and deployment condition. See [GitHub's guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) for custom domains.
+The workflow in `.github/workflows/` runs lint, type checks, tests, and a production build on pull requests and pushes to `main`. Deployment runs only on `main` outside pull requests. Quality checks read pnpm from `packageManager` and Node from `.nvmrc`; the Astro build uses Node 26. For another default branch, update both the triggers and deployment condition. See [GitHub's guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) for custom domains.
 
 Other static hosts can publish `dist/` after `pnpm build`. The output uses directory-style routes with trailing slashes. RSS is at `/rss.xml`, the sitemap at `/sitemap.xml`, and robots rules at `/robots.txt`, all under the configured base.
 

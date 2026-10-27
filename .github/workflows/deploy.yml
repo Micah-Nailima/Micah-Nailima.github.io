@@ -49,7 +49,7 @@ jobs:
       - name: Install, build, and upload your site output
         uses: withastro/action@v6
         with:
-          node-version: 22
+          node-version: 26
           build-cmd: pnpm run build
 
   deploy:

@@ -17,10 +17,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.1",
+    "@astrojs/markdown-remark": "7.3.4",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/svelte": "^9.0.1",
-    "astro": "^7.3.5",
+    "@astrojs/svelte": "9.1.1",
+    "astro": "7.4.2",
     "astro-expressive-code": "^0.44.2",
     "fuse.js": "^7.5.0",
     "github-slugger": "2.0.0",
@@ -35,7 +35,7 @@
     "svelte": "^5.57.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "0.9.12",
     "@eslint/js": "^10.0.1",
     "@types/node": "^22.20.4",
     "@types/nprogress": "^0.2.3",

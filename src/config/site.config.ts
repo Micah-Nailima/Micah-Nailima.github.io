@@ -53,14 +53,14 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: "Site Name",
   description: "Site Description",
-  url: "https://huamurui.github.io/pudding/",
-  site: "https://huamurui.github.io",
-  base: "/pudding",
+  url: "https://blog.nailima.dev/",
+  site: "https://blog.nailima.dev",
+  base: "/",
   keywords: ["astro", "blog", "theme", "pudding"],
   author: {
-    name: "Your Name",
-    email: "your@email.com",
-    github: "https://github.com/your",
+    name: "Micah",
+    // email: "your@email.com",
+    github: "https://github.com/Micah-Nailima",
   },
   navItems: [
     { href: "./", labelKey: "home", label:"home" },
@@ -68,8 +68,8 @@ export const siteConfig: SiteConfig = {
     { href: "./about", labelKey: "about", label:"about"  },
   ],
   socialLinks: [
-    { nameKey: "social.github", href: "https://github.com/your" },
-    { nameKey: "social.email", href: "mailto:your@email.com" },
+    { nameKey: "social.github", href: "https://github.com/Micah-Nailima" },
+    // { nameKey: "social.email", href: "mailto:your@email.com" },
     { nameKey: "social.rss", href: "./rss.xml" },
     { nameKey: "social.sitemap", href: "./sitemap.xml" },
   ],

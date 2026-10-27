@@ -78,7 +78,7 @@
       } catch (error) {
         if (!controller.signal.aborted) {
           directoryError = true;
-          console.error('加载目录结构失败：', error);
+          console.error('Failed to load directory structure:', error);
         }
       }
     })();

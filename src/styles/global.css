@@ -1,4 +1,4 @@
-/* 这里的 import 已移至 BaseLayout.astro 以优化渲染性能 */
+/* The imports here were moved to BaseLayout.astro to improve rendering performance */
 
 [data-theme="dark"] .astro-code,
 [data-theme="dark"] .astro-code span {
@@ -6,7 +6,7 @@
   background-color: var(--shiki-dark-bg) !important;
 }
 
-/* 暗色模式下降低图片亮度，避免刺眼 */
+/* Dim images in dark mode to avoid glare */
 [data-theme="dark"] img:not(.medium-zoom-image--opened) {
   filter: brightness(.8) contrast(1.1);
 }
@@ -53,10 +53,10 @@ body {
   margin: 0;
   font-family: var(--font-family-base);
   -webkit-tap-highlight-color: transparent;
-  /* 移除全量计算，改用简单透明 */
+  /* Drop the global computation; use plain transparent instead */
 }
 
-/* 仅在需要的地方应用 tap highlight */
+/* Apply tap highlight only where needed */
 a,
 button {
   -webkit-tap-highlight-color: var(--color-theme-mix-20);
@@ -87,7 +87,7 @@ h6::after {
   color: var(--primary-color);
   position: absolute;
   opacity: 0;
-  /* 初始状态在远处，很小，且倒转 180 度 */
+  /* Initial state: far away, tiny, and rotated 180 degrees */
   transform: translateX(30px) rotate(180deg) scale(0.5);
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   font-weight: inherit;
@@ -100,7 +100,7 @@ h4:hover::after,
 h5:hover::after,
 h6:hover::after {
   opacity: 1;
-  /* 悬停时旋转正过来，变大，并靠近标题 */
+  /* On hover: rotate upright, grow, and move closer to the title */
   transform: translateX(10px) rotate(0deg) scale(1.1);
 }
 
@@ -186,7 +186,7 @@ h6:hover::after {
   color: var(--text-primary);
   white-space: nowrap;
 
-  /* 防止内部文章标签意外继承 a 标签高亮引发的 WebKit flex 容器溢出 Bug */
+  /* Prevent inner post tags from inheriting the <a> highlight, which triggers a WebKit flex container overflow bug */
   -webkit-box-decoration-break: slice;
   box-decoration-break: slice;
   background-image: none;

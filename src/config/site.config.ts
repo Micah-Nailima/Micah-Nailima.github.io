@@ -13,6 +13,7 @@ export interface SiteConfig {
     github?: string;
     avatar?: string;
   };
+  copyright?: string;
   navItems: Array<{
     href: string;
     labelKey: string;
@@ -62,6 +63,7 @@ export const siteConfig: SiteConfig = {
     // email: "your@email.com",
     github: "https://github.com/Micah-Nailima",
   },
+  copyright: "Nailima",
   navItems: [
     { href: "./", labelKey: "home", label:"home" },
     { href: "./timeline", labelKey: "timeline", label:"timeline"  },
@@ -75,10 +77,10 @@ export const siteConfig: SiteConfig = {
   ],
   theme: {
     light: {
-      primary: "#5e7eff",
+      primary: "#b3302a",
     },
     dark: {
-      primary: "#ff9eb6",
+      primary: "#e5564e",
     },
   },
   locale: "en-US",

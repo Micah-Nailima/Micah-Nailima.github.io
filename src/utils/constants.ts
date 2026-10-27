@@ -1,14 +1,14 @@
 /**
- * 常量定义
+ * Constant definitions
  */
 
-/** 阅读速度（每分钟字数） */
+/** Reading speed (words per minute) */
 export const READING_SPEED = 200
 
-/** 滚动阈值（像素） */
+/** Scroll threshold (pixels) */
 export const SCROLL_THRESHOLD = 50
 
-/** 响应式断点 */
+/** Responsive breakpoints */
 export const BREAKPOINTS = {
   mobile: 640,
   tablet: 768,
@@ -16,14 +16,14 @@ export const BREAKPOINTS = {
   wide: 1200
 } as const
 
-/** 动画持续时间 */
+/** Animation durations */
 export const ANIMATION_DURATION = {
   fast: '0.15s',
   normal: '0.3s',
   slow: '0.45s'
 } as const
 
-/** 缓动函数 */
+/** Easing functions */
 export const EASING = {
   default: 'ease',
   smooth: 'cubic-bezier(.2,.8,.2,1)'

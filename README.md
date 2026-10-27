@@ -1,6 +1,6 @@
 # Astro Theme Pudding
 
-[简体中文](README.zh-CN.md) · [Demo](https://huamurui.github.io/pudding/)
+[Demo](https://huamurui.github.io/pudding/)
 
 Pudding is a static Markdown blog theme built with Astro 7 and Svelte 5. It includes light and dark themes, responsive post lists, a timeline, search, directory navigation, tag pages, backlinks, hover previews, image zoom, math, and Expressive Code. RSS, a sitemap, and structured metadata are generated during the build. Comments are optional through giscus.
 
@@ -80,7 +80,7 @@ Replace the hostname in the applicable fields for a custom domain. A repository 
 
 Configuration links such as `./about`, `/rss.xml`, and `./sitemap.xml` pass through the theme's base-aware URL helper. In Astro/Svelte components, use `buildUrl`, `getPostUrl`, and `getTagUrl` from `src/utils/helpers.ts`. Raw HTML links in Markdown are used as written: `/images/example.png` points to the domain root even when `base` is `/pudding`.
 
-Choose `en-US` or `zh-CN` with `locale`. Interface translations live in `src/config/i18n.config.ts`; this setting does not change the language of articles.
+The interface language is `en-US`, set with `locale`. Interface translations live in `src/config/i18n.config.ts`; this setting does not change the language of articles.
 
 ## Write posts
 
@@ -91,7 +91,7 @@ Add `.md` files under `src/posts/`. MDX is not configured. Only `title` and `dat
 title: "My first post"
 date: "2026-01-01T09:00:00+08:00"
 description: "A short description for metadata and RSS."
-tags: ["Astro", "C++/C#", "中文"]
+tags: ["Astro", "C++/C#", "Notes"]
 author: "Your Name"
 updated: "2026-01-02T10:30:00+08:00"
 pinned: false
@@ -231,7 +231,8 @@ Other static hosts can publish `dist/` after `pnpm build`. The output uses direc
 
 ```text
 src/config/         Site settings and interface translations
-src/posts/          Markdown articles; tech/ contains feature samples
+src/posts/          Markdown articles
+example_posts/      Feature sample posts kept for reference (not published)
 src/pages/          Routes, feeds, search data, and preview endpoints
 src/components/     Astro and Svelte interface components
 src/layouts/        Shared page layout

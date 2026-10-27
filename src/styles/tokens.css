@@ -1,25 +1,26 @@
 :root {
-  /* 主题主色 (放到前面以便后续引用) */
-  --color-theme: #5e7eff;
-  --color-theme-hover: #4d6eef;
+  /* Color system - light theme (GMK Bushido inverted: cream paper, black ink, red accents) */
+  /* Primary theme color (defined first so later tokens can reference it) */
+  --color-theme: #b3302a;
+  --color-theme-hover: #9a2822;
 
-  /* 背景色 (融入了微弱的环境主题光) */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: color-mix(in srgb, var(--color-theme) 2%, #f8f9fa);
-  --color-bg-tertiary: color-mix(in srgb, var(--color-theme) 4%, #f1f1f1);
+  /* Background colors (warm off-white paper) */
+  --color-bg-primary: #f6f2e9;
+  --color-bg-secondary: #eee8db;
+  --color-bg-tertiary: #e4dccb;
 
-  /* 文本色 (融入环境光，避免死黑/死灰) */
-  --color-text-primary: color-mix(in srgb, var(--color-theme) 10%, #212529);
-  --color-text-secondary: color-mix(in srgb, var(--color-theme) 8%, #5b5b5b);
-  --color-text-muted: color-mix(in srgb, var(--color-theme) 6%, #6c757d);
+  /* Text colors (warm charcoal ink) */
+  --color-text-primary: #22201d;
+  --color-text-secondary: #4d4740;
+  --color-text-muted: #6b645a;
 
-  /* 果冻半透明边框 */
-  --color-border: color-mix(in srgb, var(--color-theme) 15%, rgba(0, 0, 0, 0.08));
+  /* Border (faint ink line) */
+  --color-border: rgba(34, 32, 29, 0.12);
 
-  /* 阴影 */
-  --color-shadow: rgba(0, 0, 0, 0.08);
+  /* Shadow */
+  --color-shadow: rgba(34, 32, 29, 0.08);
 
-  /* 间距系统 */
+  /* Spacing scale */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -27,8 +28,8 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
 
-  /* 字体系统 */
-  --font-family-base: "Nunito", "寒蝉全圆体", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Typography */
+  --font-family-base: "Nunito", "ChillRoundF", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -47,25 +48,25 @@
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
 
-  /* 圆角系统 */
+  /* Border radius scale */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-full: 9999px;
 
-  /* 阴影系统 */
+  /* Shadow scale */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
 
-  /* 过渡动画 */
+  /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.45s cubic-bezier(.2, .8, .2, 1);
 
-  /* Z-index 层级 */
+  /* Z-index layers */
   --z-index-dropdown: 1000;
   --z-index-sticky: 1020;
   --z-index-fixed: 1030;
@@ -74,13 +75,13 @@
   --z-index-popover: 1060;
   --z-index-tooltip: 1070;
 
-  /* 断点 (用于 JS，CSS 中使用媒体查询) */
+  /* Breakpoints (for JS; CSS uses media queries) */
   --breakpoint-mobile: 640px;
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 968px;
   --breakpoint-wide: 1200px;
 
-  /* 颜色混合变量 - 基于 theme-color */
+  /* Color mix variables - based on theme-color */
   --color-theme-mix-5: color-mix(in srgb, var(--theme-color) 5%, transparent);
   --color-theme-mix-10: color-mix(in srgb, var(--theme-color) 10%, transparent);
   --color-theme-mix-15: color-mix(in srgb, var(--theme-color) 15%, transparent);
@@ -88,35 +89,35 @@
   --color-theme-mix-70: color-mix(in srgb, var(--theme-color) 70%, transparent);
   --color-theme-mix-80-text: color-mix(in srgb, var(--theme-color) 80%, var(--text-secondary));
 
-  /* 颜色混合变量 - 基于 primary-color */
+  /* Color mix variables - based on primary-color */
   --color-primary-mix-15: color-mix(in srgb, var(--primary-color) 15%, transparent);
   --color-primary-mix-20: color-mix(in srgb, var(--primary-color) 20%, transparent);
 }
 
 [data-theme="dark"] {
-  /* 颜色系统 - 暗色主题 */
-  /* 主题主色 (放到前面以便后续引用) */
-  --color-theme: #ff9eb6;
-  --color-theme-hover: #ff8aa8;
+  /* Color system - dark theme (GMK Bushido: black caps, cream legends, red accents) */
+  /* Primary theme color (defined first so later tokens can reference it) */
+  --color-theme: #e5564e;
+  --color-theme-hover: #ef6f66;
 
-  /* 背景色 (暗色模式混入主题色，告别死灰，呈现高级霓虹环境光) */
-  --color-bg-primary: color-mix(in srgb, var(--color-theme) 3%, #121212);
-  --color-bg-secondary: color-mix(in srgb, var(--color-theme) 5%, #1e1e1e);
-  --color-bg-tertiary: color-mix(in srgb, var(--color-theme) 7%, #2d2d2d);
+  /* Background colors (warm black keycap plastic) */
+  --color-bg-primary: #161514;
+  --color-bg-secondary: #1e1d1b;
+  --color-bg-tertiary: #2a2826;
 
-  /* 文本色 (融入主题色温) */
-  --color-text-primary: color-mix(in srgb, var(--color-theme) 8%, #e9ecef);
-  --color-text-secondary: color-mix(in srgb, var(--color-theme) 12%, #cdcdcd);
-  --color-text-muted: color-mix(in srgb, var(--color-theme) 15%, #adb5bd);
+  /* Text colors (cream legends) */
+  --color-text-primary: #e9dfc9;
+  --color-text-secondary: #c8bda6;
+  --color-text-muted: #968c7b;
 
-  /* 果冻半透明边框 (暗色专属反光) */
-  --color-border: color-mix(in srgb, var(--color-theme) 15%, rgba(255, 255, 255, 0.08));
+  /* Border (faint cream sheen) */
+  --color-border: rgba(233, 223, 201, 0.1);
 
-  /* 阴影 */
-  --color-shadow: rgba(0, 0, 0, 0.25);
+  /* Shadow */
+  --color-shadow: rgba(0, 0, 0, 0.4);
 }
 
-/* 兼容旧变量名 */
+/* Legacy variable name aliases */
 :root {
   --bg-primary: var(--color-bg-primary);
   --bg-secondary: var(--color-bg-secondary);

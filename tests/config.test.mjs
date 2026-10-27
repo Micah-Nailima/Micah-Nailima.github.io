@@ -11,15 +11,15 @@ const { getLocale, t } = await import(`data:text/javascript;base64,${Buffer.from
 
 test('unknown locales and inherited object names fall back to the default locale', () => {
   for (const locale of ['fr-FR', 'constructor', 'toString', '__proto__', undefined]) {
-    assert.equal(getLocale(locale), 'zh-CN')
+    assert.equal(getLocale(locale), 'en-US')
   }
   assert.equal(getLocale('en-US'), 'en-US')
-  assert.equal(t('fr-FR', 'header.nav.home'), '首页')
+  assert.equal(t('fr-FR', 'header.nav.home'), 'Home')
 })
 
 test('translations preserve zero and empty substitution values', () => {
   assert.equal(t('en-US', 'footer.copyright', { year: 0, author: '' }), '© 0 . All rights reserved.')
-  assert.equal(t('zh-CN', 'common.search.ariaLabel.viewArticle', { title: '<hello>' }), '查看文章：<hello>')
+  assert.equal(t('en-US', 'common.search.ariaLabel.viewArticle', { title: '<hello>' }), 'View article: <hello>')
   assert.equal(t('en-US', 'footer.copyright', { year: 2026 }), '© 2026 {author}. All rights reserved.')
 })
 

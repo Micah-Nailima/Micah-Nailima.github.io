@@ -26,16 +26,16 @@ interface ApiResponse {
 export const GET: APIRoute = async() => {
   const allBlogPosts: CollectionEntry<'posts'>[] = await getPublishedPosts()
 
-  // 用于统计标签的Map
+  // Map for counting tags
   const tagCountMap: Map<string, number> = new Map()
 
   const postsData: PostData[] = allBlogPosts.map(post => {
-    // 处理标签，确保是数组格式
+    // Process tags, ensuring they are an array
     const tags: string[] = Array.isArray(post.data.tags)
       ? post.data.tags
       : (post.data.tags ? [post.data.tags] : [])
 
-    // 更新标签计数
+    // Update tag counts
     tags.forEach(tag => {
       if (tagCountMap.has(tag)) {
         tagCountMap.set(tag, tagCountMap.get(tag)! + 1)

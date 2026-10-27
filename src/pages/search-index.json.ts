@@ -6,7 +6,7 @@ export async function GET() {
   const searchablePosts = allPosts.map((post) => ({
     id: post.id,
     title: post.data.title,
-    excerpt: post.data.description || extractExcerptFromMarkdown(post.body || '') || '无摘要',
+    excerpt: post.data.description || extractExcerptFromMarkdown(post.body || '') || 'No excerpt',
     url: getPostUrl(post.id),
     content: post.body || '',
     description: post.data.description,

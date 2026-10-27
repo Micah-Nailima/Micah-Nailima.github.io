@@ -143,7 +143,7 @@ const customTransition = { forwards: anim, backwards: anim }
                   <div class="timeline-connector year">
                     <div class="post-marker year" />
                   </div>
-                  <span class="inline-tag">{linkedPosts.length} 篇文章引用</span>
+                  <span class="inline-tag">{linkedPosts.length} {linkedPosts.length === 1 ? "reference" : "references"}</span>
                 </div>
               </div>
               <PostList posts={linkedPosts} client:load />
@@ -182,7 +182,7 @@ const customTransition = { forwards: anim, backwards: anim }
 
   const zoom = mediumZoom({ margin: 24 })
   function updateZoomTheme() {
-    zoom.update({ background: document.documentElement.getAttribute('data-theme') === 'dark' ? '#121212' : '#ffffff' })
+    zoom.update({ background: document.documentElement.getAttribute('data-theme') === 'dark' ? '#161514' : '#f6f2e9' })
   }
   let zoomRevision = 0
   function initZoom() {
@@ -203,7 +203,7 @@ const customTransition = { forwards: anim, backwards: anim }
 </BaseLayout> : <CategoryPage category={category!} posts={posts} />}
 
 <style>
-  /* 文章容器 */
+  /* Post container */
   .blog-post-container {
     display: flex;
     gap: 3rem;
@@ -211,14 +211,14 @@ const customTransition = { forwards: anim, backwards: anim }
     padding: 1rem;
   }
 
-  /* 主要内容区域 */
+  /* Main content area */
   .blog-post-content {
     flex: 1;
     min-width: 0;
     max-width: 800px;
   }
 
-  /* 文章头部 */
+  /* Post header */
   .post-header {
     margin-bottom: 2.5rem;
     padding-bottom: 1.5rem;
@@ -252,7 +252,7 @@ const customTransition = { forwards: anim, backwards: anim }
     opacity: 0.6;
   }
 
-  /* 文章图片 */
+  /* Post image */
   .post-image {
     margin: 2rem 0;
     border-radius: 12px;
@@ -304,7 +304,7 @@ const customTransition = { forwards: anim, backwards: anim }
     color: var(--text-secondary);
   }
 
-  /* 文章底部 & 反向链接 (Timeline Style) */
+  /* Post footer & backlinks (Timeline Style) */
   .post-footer {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -331,7 +331,7 @@ const customTransition = { forwards: anim, backwards: anim }
   }
 
 
-  /* 响应式设计 */
+  /* Responsive design */
   @media (max-width: 968px) {
     .blog-post-container {
       flex-direction: column;
@@ -353,7 +353,7 @@ const customTransition = { forwards: anim, backwards: anim }
       font-size: 1.1rem;
     }
 
-    /* 为小屏幕添加顶部间距，避免内容被顶部滚动目录遮挡 */
+    /* Add top spacing on small screens so content isn't covered by the top scrolling ToC */
     .post-header {
       margin-top: 2rem;
     }

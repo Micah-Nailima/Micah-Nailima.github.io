@@ -22,7 +22,7 @@ const searchablePosts = allPosts.map((post) => ({
   id: post.id,
   title: post.data.title,
   url: getPostUrl(post.id)
-  // 不再在这里传递 content，改用异步加载索引
+  // Content is no longer passed here; the index is loaded asynchronously
 }));
 ---
 
@@ -89,12 +89,12 @@ const searchablePosts = allPosts.map((post) => ({
 
 <script>
 (function() {
-  // 滚动状态变量（保持在外部以保存状态）
+  // Scroll state variables (kept outside to persist state)
   let lastScrollTop = 0
   let currentDirection = 'down'
   let scrollDistance = 0
   const threshold = 50
-  let showingNav = true // 当前是否显示导航（而非标题）
+  let showingNav = true // Whether the nav (rather than the title) is currently shown
 
   function setMenuOpen(open: boolean) {
     const toggle = document.getElementById('menu-toggle')
@@ -131,7 +131,7 @@ const searchablePosts = allPosts.map((post) => ({
     }
   })
 
-  // 滚动处理函数：每次运行时重新查询相关 DOM 元素以应对 SPA 替换
+  // Scroll handler: re-queries the relevant DOM elements on each run to handle SPA swaps
   function handleScroll() {
     if (window.innerWidth <= 768) return
 

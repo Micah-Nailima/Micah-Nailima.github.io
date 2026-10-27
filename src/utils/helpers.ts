@@ -1,13 +1,13 @@
 /**
- * 工具函数
+ * Utility functions
  */
 
 import { siteConfig } from '@/config/site.config'
 
 /**
- * 统一的 URL 拼接方法
- * @param path 路径，可以是字符串或数组
- * @returns 完整的 URL，包含 base 路径
+ * Unified URL builder
+ * @param path Path, either a string or an array
+ * @returns Full URL, including the base path
  */
 export function buildUrl(path: string | string[]): string {
   const relativePath = Array.isArray(path) ? path.join('/') : path
@@ -23,29 +23,29 @@ export function buildUrl(path: string | string[]): string {
 }
 
 /**
- * 从 HTML 中提取摘要
+ * Extract an excerpt from HTML
  */
 export function extractExcerptFromHtml(html: string, maxLength: number = 300): string {
-  // 1. 查找 <!-- more --> 标记
+  // 1. Look for the <!-- more --> marker
   const moreMarker = /<!--\s*more\s*-->/i
   if (moreMarker.test(html)) {
     const [excerptHtml] = html.split(moreMarker)
     return excerptHtml.trim()
   }
 
-  // 2. 自动提取第一段（到第一个块级元素结束）
+  // 2. Auto-extract the first paragraph (up to the end of the first block element)
   const firstParagraphMatch = html.match(/<(p|ul|ol)\b[^>]*>[\s\S]*?<\/\1>/i)
   if (firstParagraphMatch) {
     return firstParagraphMatch[0]
   }
 
-  // 3. 兜底处理
+  // 3. Fallback
   const text = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
     .replace(/<[^>]+>/g, '').trim()
   return text.length > maxLength ? `${text.slice(0, maxLength).trim()}…` : text
 }
 
-/** 从 Markdown 中提取适合列表和 meta description 的纯文本摘要。 */
+/** Extract a plain-text excerpt from Markdown suitable for lists and meta descriptions. */
 export function extractExcerptFromMarkdown(markdown: string, maxLength: number = 300): string {
   const source = markdown.split(/<!--\s*more\s*-->/i)[0]
     .replace(/^(?:```|~~~)[^\n]*\n[\s\S]*?^(?:```|~~~)\s*$/gm, '')
@@ -67,7 +67,7 @@ export function extractExcerptFromMarkdown(markdown: string, maxLength: number =
 }
 
 /**
- * 计算阅读时间（分钟）
+ * Calculate reading time (minutes)
  */
 export function calculateReadingTime(content: string, wordsPerMinute: number = 200): number {
   if (!Number.isFinite(wordsPerMinute) || wordsPerMinute <= 0) {
@@ -76,10 +76,10 @@ export function calculateReadingTime(content: string, wordsPerMinute: number = 2
   return Math.ceil(countWords(content) / wordsPerMinute)
 }
 /**
- * 统计字数
+ * Count words
  */
 export function countWords(content: string): number {
-  // 处理中英文状况，所以，空格是不合适的，直接字符数也不合适
+  // Handles both Chinese and English, so neither splitting on spaces nor raw character count works
   const strippedContent = content.replace(/<[^>]+>/g, '').trim()
 
   const chineseCharCount = (strippedContent.match(/[\u4e00-\u9fa5]/g) || []).length
@@ -87,7 +87,7 @@ export function countWords(content: string): number {
   return chineseCharCount + englishWordCount
 }
 /**
- * 格式化日期
+ * Format date
  */
 export function formatDate(date: Date | string, format: 'iso' | 'local' = 'iso'): string {
   const d = typeof date === 'string' ? new Date(date) : date
@@ -96,7 +96,7 @@ export function formatDate(date: Date | string, format: 'iso' | 'local' = 'iso')
     return d.toISOString().split('T')[0]
   }
 
-  return d.toLocaleDateString('zh-CN', {
+  return d.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -104,14 +104,14 @@ export function formatDate(date: Date | string, format: 'iso' | 'local' = 'iso')
 }
 
 /**
- * 生成文章 URL
+ * Generate post URL
  */
 export function getPostUrl(postId: string, basePath: string = '/posts'): string {
   return buildUrl([basePath, postId.split('/').map(encodeURIComponent).join('/'), ''])
 }
 
 /**
- * 生成标签 URL
+ * Generate tag URL
  */
 export function getTagRoutePath(tag: string): string {
   const normalized = tag.normalize()
@@ -130,7 +130,7 @@ export function getTagUrl(tag: string, basePath: string = '/tags'): string {
 }
 
 /**
- * 生成安全的 view-transition-name
+ * Generate a safe view-transition-name
  */
 export function sanitizeViewTransitionName(id: string): string {
   // Encoding every code point keeps names distinct even for Chinese titles or punctuation.
@@ -138,7 +138,7 @@ export function sanitizeViewTransitionName(id: string): string {
 }
 
 /**
- * 检查是否为文章页面
+ * Check whether this is a post page
  */
 export function isPostPage(pathname: string, postPath: string = '/posts'): boolean {
   const prefix = buildUrl(postPath).replace(/\/$/, '')
@@ -146,7 +146,7 @@ export function isPostPage(pathname: string, postPath: string = '/posts'): boole
 }
 
 /**
- * 检查是否为首页
+ * Check whether this is the home page
  */
 export function isHomePage(pathname: string): boolean {
   const home = buildUrl('')
@@ -155,7 +155,7 @@ export function isHomePage(pathname: string): boolean {
 
 
 /**
- * 生成面包屑导航项（基于文件目录）
+ * Generate breadcrumb items (based on file directories)
  */
 export function generateBreadcrumbItems(postId: string, _isCategory: boolean = false): Array<{ label: string; href: string }> {
   const items: Array<{ label: string; href: string }> = [

@@ -16,7 +16,7 @@ import FAB from '@/components/FAB.svelte'
 import Sidebar from '@/components/Sidebar.astro'
 import { resolveCanonicalUrl } from '@/scripts/canonical'
 
-// 判断是否为文章页面
+// Determine whether this is a post page
 const isPostsPage = isPostPage(Astro.url.pathname)
 
 interface Props {
@@ -95,7 +95,7 @@ const isHome = isHomePage(Astro.url.pathname);
         will-change: transform, opacity;
       }
 
-      /* 侧边栏 */
+      /* Sidebar */
       .blog-post-sidebar {
         width: 320px;
         flex-shrink: 0;

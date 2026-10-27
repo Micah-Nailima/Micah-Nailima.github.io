@@ -29,7 +29,7 @@ export default [
       globals: { ...globals.browser, ...globals.node }
     },
     rules: {
-      // 基础规则
+      // Base rules
       semi: ['warn', 'never'],
       quotes: ['warn', 'single'], 
       'quote-props': ['warn', 'as-needed'],

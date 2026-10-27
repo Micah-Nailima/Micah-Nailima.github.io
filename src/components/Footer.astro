@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
 
 <footer class="footer">
   <div class="footer-container">
-    <!-- 链接 -->
+    <!-- Links -->
     <div class="footer-links">
       {
         siteConfig.socialLinks.map((link) => (
@@ -25,13 +25,13 @@ const currentYear = new Date().getFullYear();
       }
     </div>
 
-    <!-- 底部版权信息 -->
+    <!-- Copyright info -->
     <div class="footer-bottom">
       <p class="footer-description">
         {siteConfig.description}
       </p>
       <p class="copyright">
-        {t('footer.copyright', { year: currentYear, author: siteConfig.author.name })}
+        {t('footer.copyright', { year: currentYear, author: siteConfig.copyright ?? siteConfig.author.name })}
       </p>
       <p class="credit">
         {t('footer.poweredBy')} <a

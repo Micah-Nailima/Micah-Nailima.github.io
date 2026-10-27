@@ -8,7 +8,7 @@ import { getPublishedPosts } from '@/utils/content'
 import { formatDate } from '@/utils/helpers'
 
 interface Props {
-  intro?: string; // 一句话简介（可选）
+  intro?: string; // One-line intro (optional)
   post?: PostEntry | null; // post
 }
 
@@ -30,7 +30,7 @@ allBlogPosts.map((post) => {
       ? [post.data.tags]
       : []
 
-  // 更新标签计数
+  // Update tag counts
   tags.forEach((tag) => {
     if (tagCountMap.has(tag)) {
       tagCountMap.set(tag, tagCountMap.get(tag)! + 1)
@@ -43,15 +43,15 @@ allBlogPosts.map((post) => {
 
 <div class="profile-sidebar">
   <div class="profile-avatar">
-    <!-- <img src="/avatar.jpg" alt="你的昵称" class="avatar-img" /> -->
+    <!-- <img src="/avatar.jpg" alt="Your nickname" class="avatar-img" /> -->
   </div>
   <h3 class="profile-name">{siteConfig.author.name}</h3>
   <p class="profile-intro">{intro}</p>
 
-  <!-- 社交链接 -->
+  <!-- Social links -->
   <!-- <div class="profile-social">
     <a href="https://github.com/xxx" aria-label="GitHub">🔗</a>
-    <a href="mailto:xxx@xxx.com" aria-label="邮箱">📧</a>
+    <a href="mailto:xxx@xxx.com" aria-label="Email">📧</a>
   </div> -->
 
   <div class="profile-stats">

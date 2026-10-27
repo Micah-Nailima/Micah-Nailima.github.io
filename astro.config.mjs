@@ -34,24 +34,24 @@ export default defineConfig({
     svelte(),
 
     expressiveCode({
-      themes: ['tokyo-night', 'one-light'],
+      themes: ['kanagawa-wave', 'kanagawa-lotus'],
       styleOverrides: {
         borderRadius: '8px',
         borderColor: 'var(--border-color)',
         codeFontFamily: "'JetBrains Mono', 'Fira Code', 'Consolas', monospace",
       },
-      // 配置主题选择器映射
+      // Configure theme selector mapping
       themeCssSelector: (theme) => {
-        // 将我们的主题切换值映射到 Expressive Code 主题
-        if (theme.name === 'tokyo-night') {
+        // Map our theme toggle values to Expressive Code themes
+        if (theme.name === 'kanagawa-wave') {
           return '[data-theme="dark"]';
         }
-        if (theme.name === 'one-light') {
+        if (theme.name === 'kanagawa-lotus') {
           return '[data-theme="light"]';
         }
         return false;
       },
-      // 使用暗色模式媒体查询
+      // Use the dark mode media query
       useDarkModeMediaQuery: true,
     }),
   ],

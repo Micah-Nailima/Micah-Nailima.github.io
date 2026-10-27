@@ -120,9 +120,9 @@ test('sitemap contains nested directories and tags without repeating deployment 
     '@/config/site.config': configUrl
   })
   const xml = await (await sitemap.exports.GET()).text()
-  assert.match(xml, /https:\/\/huamurui.github.io\/blog\/posts\/tech\/nested\/a\//)
-  assert.match(xml, /https:\/\/huamurui.github.io\/blog\/posts\/tech\/nested\//)
-  assert.match(xml, /https:\/\/huamurui.github.io\/blog\/tags\/C%2B%2B\//)
+  assert.match(xml, /https:\/\/blog.nailima.dev\/blog\/posts\/tech\/nested\/a\//)
+  assert.match(xml, /https:\/\/blog.nailima.dev\/blog\/posts\/tech\/nested\//)
+  assert.match(xml, /https:\/\/blog.nailima.dev\/blog\/tags\/C%2B%2B\//)
   assert.doesNotMatch(xml, /\/blog\/blog\//)
   assert.match(xml, /href="\/blog\/sitemap.xsl"/)
   assert.doesNotMatch(xml, /sasayai/i)
@@ -141,8 +141,8 @@ test('theme RSS and robots advertise the configured nonempty deployment base', a
   })
   const response = await rssModule.exports.GET({ site: new URL(siteConfig.site) })
   const xml = await response.text()
-  assert.match(xml, /<link>https:\/\/huamurui.github.io\/pudding\/<\/link>/)
-  assert.match(xml, /https:\/\/huamurui.github.io\/pudding\/posts\/tech\/test\//)
+  assert.match(xml, /<link>https:\/\/blog.nailima.dev\/pudding\/<\/link>/)
+  assert.match(xml, /https:\/\/blog.nailima.dev\/pudding\/posts\/tech\/test\//)
   assert.match(xml, /href="\/pudding\/rss.xsl"/)
   assert.match(xml, /<language>en-us<\/language>/)
   const robotsModule = await sourceModule('src/pages/robots.txt.ts', {
@@ -150,7 +150,7 @@ test('theme RSS and robots advertise the configured nonempty deployment base', a
     '@/utils/helpers': helpersModule.url
   })
   const robots = await robotsModule.exports.GET({ site: new URL(siteConfig.site) })
-  assert.match(await robots.text(), /Sitemap: https:\/\/huamurui.github.io\/pudding\/sitemap.xml/)
+  assert.match(await robots.text(), /Sitemap: https:\/\/blog.nailima.dev\/pudding\/sitemap.xml/)
 })
 
 test('JSON-LD serialization preserves text without exposing HTML script delimiters', async() => {

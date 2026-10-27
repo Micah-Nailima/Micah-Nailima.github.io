@@ -2,14 +2,14 @@
     margin: 1.5rem 0;
     max-width: 100%;
     box-sizing: border-box;
-    /* 清除 figure 默认的外边距 */
+    /* Reset the default figure margin */
     padding: 0;
 }
 
 .link-card a.link-card__link {
     display: flex;
     flex-direction: row-reverse;
-    /* 将图片移到右侧，类似 Notion 风格 */
+    /* Move the image to the right, Notion-style */
     text-decoration: none;
     color: inherit;
     background: var(--bg-secondary);
@@ -19,7 +19,7 @@
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
-    /* 清除外部 a 标签样式干扰 */
+    /* Clear interference from outer <a> styles */
     font-weight: inherit;
     -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
@@ -103,12 +103,12 @@
 
 .link-card__img-wrapper {
     flex: 0 0 220px;
-    /* 加宽图片区域使比例更协调 */
+    /* Widen the image area for better proportions */
     background: var(--bg-tertiary);
     position: relative;
     border-left: 1px solid var(--border-color);
     margin: 0 !important;
-    /* 图片在右侧时的边框 */
+    /* Border when the image is on the right */
 
 }
 
@@ -129,7 +129,7 @@
 @media (max-width: 640px) {
     .link-card a.link-card__link {
         flex-direction: column-reverse;
-        /* 手机端：图片在上，文字在下 */
+        /* Mobile: image on top, text below */
     }
 
     .link-card__img-wrapper {

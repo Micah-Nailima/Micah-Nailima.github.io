@@ -9,10 +9,10 @@ const postImageSchema = z.object({
 
 
 const postsSchema = z.object({
-  title: z.string().min(1, '标题不能为空'),
+  title: z.string().min(1, 'Title cannot be empty'),
   description: z.string().optional(),
   date: z.coerce.date(),
-  tags: z.array(z.string().trim().min(1, '标签不能为空').transform(tag => tag.normalize()))
+  tags: z.array(z.string().trim().min(1, 'Tags cannot be empty').transform(tag => tag.normalize()))
     .default([]).transform(tags => [...new Set(tags)]),
   image: postImageSchema.optional(),
   author: z.string().optional(),

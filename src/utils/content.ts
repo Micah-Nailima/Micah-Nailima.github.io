@@ -9,13 +9,13 @@ export interface DirectoryNode {
 
 export type DirectoryStructure = Record<string, DirectoryNode>;
 
-/** 获取应公开展示的文章，避免草稿进入页面、索引和订阅源。 */
+/** Get posts that should be public, keeping drafts out of pages, indexes and feeds. */
 export async function getPublishedPosts(): Promise<CollectionEntry<'posts'>[]> {
   return getCollection('posts', ({ data }) => !data.draft)
 }
 
 /**
- * 生成目录结构数据（基于文件目录）
+ * Generate directory structure data (based on file directories)
  */
 export async function generateDirectoryStructure() {
   const posts = await getPublishedPosts()
@@ -68,7 +68,7 @@ export function groupPostsByDirectory(posts: CollectionEntry<'posts'>[]): Map<st
 }
 
 /**
- * 获取指定路径的子项
+ * Get the children of a given path
  */
 export async function getPathChildren(path: string) {
   const structure = await generateDirectoryStructure()

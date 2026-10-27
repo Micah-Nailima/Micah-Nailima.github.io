@@ -140,7 +140,7 @@ import 'nprogress/nprogress.css';
     crossorigin
   />
 
-  <!-- 为文章页预载代码字体 -->
+  <!-- Preload the code font on post pages -->
   {needGiscus && (
     <link
       rel="preload"
@@ -151,7 +151,7 @@ import 'nprogress/nprogress.css';
     />
   )}
 
-  <!-- 引入字体 (本地切片加载) -->
+  <!-- Load fonts (local subset slices) -->
   <link
     rel="stylesheet"
     href={buildUrl('fonts/ChillRoundFRegular/result.css')}
@@ -165,7 +165,7 @@ import 'nprogress/nprogress.css';
     onload="this.setAttribute('media','all')"
   />
 
-  <!-- 预连接外部资源 (仅在需要时) -->
+  <!-- Preconnect to external resources (only when needed) -->
   {needGiscus && (
     <>
       <link rel="preconnect" href="https://giscus.app" crossorigin />
@@ -193,7 +193,7 @@ import 'nprogress/nprogress.css';
     @font-face {
       font-family: 'JetBrains Mono';
       src: url('${buildUrl('fonts/JetBrainsMono/fonts/variable/JetBrainsMono[wght].ttf')}') format('truetype');
-      font-weight: 400 700; /* 缩小范围，减少计算 */
+      font-weight: 400 700; /* Narrow the range to reduce computation */
       font-style: normal;
       font-display: swap;
     }

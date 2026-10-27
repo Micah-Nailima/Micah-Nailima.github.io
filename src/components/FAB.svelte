@@ -58,7 +58,7 @@
     border: none;
     outline: none;
     border-radius: 50%;
-    /* 使用 color-mix 实现半透明毛玻璃感 */
+    /* Use color-mix for a translucent frosted-glass look */
     background-color: color-mix(in srgb, var(--primary-color) 15%, transparent);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);

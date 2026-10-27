@@ -33,7 +33,7 @@ const { headings = [] } = Astro.props as Props;
   <div class="toc-indicator" id="toc-indicator"></div>
 </nav>
 
-<!-- 顶部滚动目录（仅小屏幕显示） -->
+<!-- Top scrolling ToC (small screens only) -->
 <div class="scroll-toc-container" inert>
   <button
     class="scroll-toc-toggle"
@@ -146,7 +146,7 @@ const { headings = [] } = Astro.props as Props;
     opacity: 0;
   }
 
-  /* 顶部滚动目录样式 */
+  /* Top scrolling ToC styles */
   .scroll-toc-container {
     display: none;
     position: fixed;
@@ -385,7 +385,7 @@ import { t } from '@/utils/i18n'
       DOM.scrollTocToggle.setAttribute('aria-expanded', (!isExpanded).toString())
       DOM.scrollToc.classList.toggle('expanded', !isExpanded)
       DOM.scrollToc.inert = isExpanded
-      // 展开时确保活跃项在可视区域
+      // When expanded, make sure the active item is in view
       if (!isExpanded) adjustScrollTocScroll()
     }
 
@@ -524,7 +524,7 @@ import { t } from '@/utils/i18n'
     function updateIndicatorPosition() {
       if (!DOM.indicator || !DOM.tocList || window.innerWidth <= 968 || state.activeIndex === -1) return
 
-      // 找到 visible或active 类的第一个元素
+      // Find the first element with the visible or active class
       const visibleItems = DOM.tocList.querySelectorAll('.toc-item.visible, .toc-item.active')
       if (visibleItems.length === 0) {
         DOM.indicator.style.opacity = '0'
@@ -556,7 +556,7 @@ import { t } from '@/utils/i18n'
 
       const targetScrollTop = activeItemOffsetTop - (tocListClientHeight - activeItemHeight) * state.config.scrollRatio
       DOM.tocList.scrollTo({
-        top: Math.max(0, targetScrollTop), // 避免负数值（滚到顶部）
+        top: Math.max(0, targetScrollTop), // Avoid negative values (scroll to top)
         behavior: 'smooth'
       })
     }

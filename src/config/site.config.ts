@@ -53,7 +53,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "Site Name",
-  description: "Site Description",
+  description: "Things I've worked on",
   url: "https://blog.nailima.dev/",
   site: "https://blog.nailima.dev",
   base: "/",

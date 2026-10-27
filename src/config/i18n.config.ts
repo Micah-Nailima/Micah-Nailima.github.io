@@ -84,7 +84,7 @@ export interface I18nConfig {
 export const i18nConfig = {
   'en-US': {
     common: {
-      brand: 'Pudding',
+      brand: 'Nailima',
       search: {
         placeholder: 'Search articles...',
         loadError: 'Search data could not be loaded. Please try again later.',
